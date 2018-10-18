@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 form = """
 <html>
-    <head>
+    <head><title>Golden Girls Encrypt</title>
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700" rel="stylesheet">
         <style>
             form {{
@@ -25,6 +25,7 @@ form = """
                 padding: 4px 8px;
                 font-family: 'Chakra Petch', sans-serif;
                 font-size: 20px;
+                background-color: #FF91B4;
             }}
             body {{
                 background-color: #9799CA;
@@ -42,25 +43,46 @@ form = """
             img {{
                 float: right;
             }}
+            .first-choice {{
+                background-color: #F0F757;
+            }}
+            .second-choice {{
+                background-color: #48BAC4;
+            }}
+            h1{{
+                font-family: 'Chakra Petch', sans-serif;
+                text-align: center;
+                color: #D34BAF;
+            }}
+            h2 {{
+                font-family: 'Chakra Petch', sans-serif;
+                text-align: center;
+                color: #5BD373;
+
+            }}
+
         </style>
     </head>
     <body>
+      <h1>Super Secret Encryption: Golden Girls Edition</h1>
       <form action= "/" method= "POST">
-        <input type="radio" id="caesar" name="encryptionType" value="caesar" />
+        <input class= "first_choice" type="radio" id="caesar" name="encryptionType" value="caesar" />
         <label for="caesar"><strong>Caesar:</strong></label>
-        <label for="rotate">Rotation Number</label>
-        <input name="rot" type= "text" id=rotate /></br>
-        <input type="radio" id="vigenere" name="encryptionType" value="vigenere" />
+        <label  for="rotate">Rotation Number</label>
+        <input class= "first-choice" name="rot" type= "text" id=rotate /></br>
+        <input class= "second-choice" type="radio" id="vigenere" name="encryptionType" value="vigenere" />
         <label for="vigenere"><strong>Vigenere:</strong></label>
         <label for="encryptKey">Encrypt Key</label>
-        <input name="key" type= "text" id="encryptKey" />
+        <input class= "second-choice" name="key" type= "text" id="encryptKey" />
       <div>
         <textarea name="text">{0}</textarea>
       </div>
       <div>  
         <input id= "button" type= "submit" />
       </div>
+      <div>
       </form>
+      <h2 id= "Golden">Thank you for being a friend.</h2>
     </body>
 </html>        
 """
