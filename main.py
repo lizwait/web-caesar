@@ -18,7 +18,7 @@ form = """
                 border-radius: 10px;
             }}
             textarea {{
-                margin: 0;
+                margin: 10px 0px 10px 0px;
                 width: 540px;
                 height: 120px;
                 border: 0;
@@ -39,17 +39,20 @@ form = """
             input, label, textarea{{
                 font-family: 'Chakra Petch', sans-serif;
             }}
+            img {{
+                float: right;
+            }}
         </style>
     </head>
     <body>
       <form action= "/" method= "POST">
         <input type="radio" id="caesar" name="encryptionType" value="caesar" />
-        <label for="caesar">Caesar</label>
-        <label for="rotate">Rotate by:</label>
+        <label for="caesar"><strong>Caesar:</strong></label>
+        <label for="rotate">Rotation Number</label>
         <input name="rot" type= "text" id=rotate /></br>
         <input type="radio" id="vigenere" name="encryptionType" value="vigenere" />
-        <label for="vigenere">Vigenere</label>
-        <label for="encryptKey">Encrypt key:</label>
+        <label for="vigenere"><strong>Vigenere:</strong></label>
+        <label for="encryptKey">Encrypt Key</label>
         <input name="key" type= "text" id="encryptKey" />
       <div>
         <textarea name="text">{0}</textarea>
